@@ -84,7 +84,7 @@ console.log(favoriteSong(songs));
 */
 
 function Calculator(){
-    var args = []; // to convert arguments to a real Array
+    var args = [];
     this.add = function(a){
         var num = [...arguments];
         num.forEach(item => args.push(item));
