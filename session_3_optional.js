@@ -4,7 +4,11 @@ function deepCopy(obj) {
     }
     var clone = {};
     for (var key in obj) {
-        clone[key] = deepCopy(obj[key]);
+        if(typeof obj[key] === 'object'){
+           clone[key] = deepCopy(obj[key]);
+        }else{
+           clone[key] = obj[key];
+        }
     }
     return clone;
 }
