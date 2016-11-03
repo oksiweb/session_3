@@ -1,7 +1,4 @@
 function deepCopy(obj) {
-    if (obj === null) {
-        return obj;
-    }
     var clone = {};
     for (var key in obj) {
         if(typeof obj[key] === 'object'){
