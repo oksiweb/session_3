@@ -85,7 +85,7 @@ console.log(favoriteSong(songs));
 
 function Calculator(){
     var args = [];
-    this.add = function(a){
+    this.add = function(){
         var num = [...arguments];
         num.forEach(item => args.push(item));
     };
