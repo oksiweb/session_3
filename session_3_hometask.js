@@ -84,31 +84,32 @@ console.log(favoriteSong(songs));
 */
 
 function Calculator(){
-    var args = [...arguments]; // to convert arguments to a real Array
+    var args = []; // to convert arguments to a real Array
     this.add = function(a){
-        if (a !== undefined) {
-            args[args.length-1] = args[args.length-1]+a;
-            // return args;  // not specified in the task;
-        }
+        var num = [...arguments];
+        num.forEach(item => args.push(item));
     };
     this.getCurrentSum = function(index){
-        if (index !== undefined) {
-            var stepArgs = args.slice();
-            stepArgs.length = index;
-            return stepArgs.reduce((sum,item) => sum+item);
+        if(args.length>0){
+            if (index !== undefined) {
+                var stepArgs = args.slice();
+                stepArgs.length = index;
+                return stepArgs.reduce((sum,item) => sum+item);
+            } else{
+                return args.reduce((sum,item) => sum+item);
+            };
         } else{
-            return args.reduce((sum,item) => sum+item);
-        };
+            return 0;
+        }
     };
 };
 
-var object1 = new Calculator(3,8,11);
-var object2 = new Calculator(5,12,17);
-
-
+var object1 = new Calculator();
+var object2 = new Calculator();
+console.log(object1.add(3,8,11));
+console.log(object2.add(5,12,17));
 console.log(object1.getCurrentSum(2)+object2.getCurrentSum(2));
 console.log(object1.getCurrentSum(3)+object2.getCurrentSum(3));
-
 console.log(object1.getCurrentSum(3));
 console.log(object1.add(8));
 console.log(object1.getCurrentSum());
