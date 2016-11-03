@@ -1,5 +1,5 @@
 function deepCopy(obj) {
-    if (obj === null || typeof obj !== 'object') {
+    if (obj === null) {
         return obj;
     }
     var clone = {};
