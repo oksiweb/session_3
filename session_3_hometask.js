@@ -65,11 +65,11 @@ function favoriteSong(collection) {
     var songPlayed = 0;
     var songIndex;
     collection.forEach((item,i) => {
-      if (collection[i].played > songPlayed) {
-			  songName = collection[i].name;
-			  songPlayed = collection[i].played;
-			  songIndex = i;
-       }
+        if (collection[i].played > songPlayed) {
+	        songName = collection[i].name;
+	        songPlayed = collection[i].played;
+	        songIndex = i;
+        }
     });
     return 'My favorite song is ' + songName + '. Played: ' + songPlayed + ' times. Index: ' + songIndex + '\n';
 }
