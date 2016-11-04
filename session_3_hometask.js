@@ -59,15 +59,36 @@ songs[4] = {
     name: "Fairytale Gone Bad"
 };
 
+// 1 song
 function favoriteSong(collection) {
-    var allsongs="";
+    var songName;
+    var songPlayed = 0;
+    var songIndex;
+    collection.forEach((item,i) => {
+      if (collection[i].played > songPlayed) {
+			  songName = collection[i].name;
+			  songPlayed = collection[i].played;
+			  songIndex = i;
+       }
+    });
+    return 'My favorite song is ' + songName + '. Played: ' + songPlayed + ' times. Index: ' + songIndex + '\n';
+}
+
+console.log(favoriteSong(songs));
+
+//all songs
+
+function favoriteSongsAll(collection) {
+    var allsongs = 'All playlist: \n';
     collection.forEach((item,i) => {
         allsongs += 'Song\'s name is ' + collection[i].name + '. Played: ' + collection[i].played + ' times. Index: ' + i + '\n';
     });
     return allsongs;
 }
 
-console.log(favoriteSong(songs));
+console.log(favoriteSongsAll(songs));
+
+
 
 /*
     Класс калькулятор
