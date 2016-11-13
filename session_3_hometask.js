@@ -36,28 +36,28 @@ played - количество раз песня была проиграна (о�
 следующую информацию: название песни, сколько раз песня была проиграна, индекс песни в коллекции.
 Вызовите функцию favoriteSong и передайте ей созданную коллекцию
 */
-var songs = [];
-
-songs[0] = {
-    played: 3,
-    name: "Masterpiece"
-};
-songs[1] = {
-    played: 2,
-    name: "JavaScript Coder"
-};
-songs[2] = {
-    played: 10,
-    name: "I Love You Like a Love Song, Baby"
-};
-songs[3] = {
-    played: 4,
-    name: "Hit My Heart"
-};
-songs[4] = {
-    played: 25,
-    name: "Fairytale Gone Bad"
-};
+var songs = [
+    {
+        played: Math.round(Math.random() * 100),
+        name: "Masterpiece"
+    },
+    {
+        played: Math.round(Math.random() * 100),
+        name: "JavaScript Coder"
+    },
+    {
+        played: Math.round(Math.random() * 100),
+        name: "I Love You Like a Love Song, Baby"
+    },
+    {
+        played: Math.round(Math.random() * 100),
+        name: "Hit My Heart"
+    },
+    {
+        played: Math.round(Math.random() * 100),
+        name: "Fairytale Gone Bad"
+    }
+];
 
 // 1 song
 function favoriteSong(collection) {
